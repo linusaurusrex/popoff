@@ -1,0 +1,13 @@
+{
+	"manifest_version": 2,
+	"name": "Pop Off",
+	"description": "Prevent annoying chrome-less windows",
+	"version": "0.1.0",
+	"content_scripts": [{
+		"matches": ["*://*/*"],
+		"js": ["injector.js"],
+		"run_at": "document_end",
+		"all_frames": true
+	}],
+	"web_accessible_resources": ["content.js"]
+}
