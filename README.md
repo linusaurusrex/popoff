@@ -1,5 +1,5 @@
 # Pop Off
-A Chrome extension to prevent popup windows.
+A Chrome extension to make popups open as tabs instead of separate, feature-reduced windows.
 
 ## Install
 - Download this repository.
