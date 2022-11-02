@@ -1,4 +1,16 @@
 (() => {
 	const _open = window.open;
-	window.open = (url, target) => _open(url, target);
+
+	const supportedBooleanFeatures = [
+		'noopener',
+		'noreferrer'
+	];
+
+	window.open = (url, target = '', windowFeatures = '') => {
+		const passedFeatures = [];
+		for (const feature of supportedBooleanFeatures)
+			if (windowFeatures.includes(feature))
+				passedFeatures.push(feature);
+		return _open(url, target, passedFeatures.join());
+	};
 })();
