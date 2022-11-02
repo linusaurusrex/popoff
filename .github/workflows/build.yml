@@ -1,0 +1,36 @@
+name: Create release and build from tag
+
+# Run on version number tags
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Package into zip
+        run: zip popoff_${{ github.ref_name }}.zip manifest.json scripts/* images/icon*
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: Release ${{ github.ref }}
+          tag_name: ${{ github.ref }}
+
+      - name: Upload build to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          asset_content_type: application/zip
+          asset_name: popoff_${{ github.ref_name }}.zip
+          asset_path: popoff_${{ github.ref_name }}.zip
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
