@@ -17,3 +17,6 @@ Make them behave like any other tab, just like you always wanted!
 - (Inspect the code to ensure it is not malicious.)
 - Open [`chrome://extensions`](about:extensions).
 - Click "Load unpacked" and select the directory containing this code.
+
+## Privacy
+Read the [privacy policy](https://github.com/linusbrogan/popoff/blob/main/privacy.md).
