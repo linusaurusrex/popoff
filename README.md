@@ -13,6 +13,8 @@ Make them behave like any other tab, just like you always wanted!
 ![Screenshot of a popup window with arrows pointing out the minimal URL bar](images/screenshot-1-1280x800.png)
 
 ## Install
+[Install](https://chrome.google.com/webstore/detail/pop-off/jecpgjkijfbpjecjnlgojaohghgccmfd) from the Chrome Web Store.
+Alternatively, install from source:
 - Download this repository.
 - (Inspect the code to ensure it is not malicious.)
 - Open [`chrome://extensions`](about:extensions).
