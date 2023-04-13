@@ -4,8 +4,10 @@
 	"description": "Make popups open as tabs instead of windows.",
 	"version": "0.3.0",
 	"content_scripts": [{
+		"all_frames": true,
 		"js": ["scripts/injector.js"],
 		"matches": ["<all_urls>"],
+		"match_origin_as_fallback": true,
 		"run_at": "document_start"
 	}],
 	"web_accessible_resources": [{
