@@ -2,13 +2,14 @@
 	"manifest_version": 3,
 	"name": "Pop Off",
 	"description": "Make popups open as tabs instead of windows.",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"content_scripts": [{
 		"all_frames": true,
-		"js": ["scripts/injector.js"],
+		"js": ["scripts/open.js"],
 		"matches": ["<all_urls>"],
 		"match_origin_as_fallback": true,
-		"run_at": "document_start"
+		"run_at": "document_start",
+		"world": "MAIN"
 	}],
 	"web_accessible_resources": [{
 		"matches": ["<all_urls>"],
